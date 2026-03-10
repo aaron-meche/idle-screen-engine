@@ -76,14 +76,15 @@ const fontList = [
 const configs = {
     stdView: {
         font: {
-            top: 10,
-            size: 6,
+            top: 6,
+            size: 24,
             weight: 700,
             font: fontList[0],
             opacity: 0.5,
         },
         widget: {
-            bottom: 5,
+            bottom: 2,
+            size: 2,
             font: fontList[0],
             opacity: 0.75,
         },
@@ -92,98 +93,76 @@ const configs = {
         font: {
             bottom: 6,
             left: 2,
-            size: 9,
-            weight: 600,
-            font: fontList[0],
-            opacity: 0.5,
+            size: 24,
         },
         widget: {
-            bottom: 2,
-            left: 1,
-            font: fontList[0],
-            opacity: 0.75,
+            bottom: 4,
+            left: 2,
         },
     },
     bottomRight: {
         font: {
             bottom: 6,
             right: 2,
-            size: 9,
-            weight: 600,
-            font: fontList[0],
-            opacity: 0.5,
-        },
-        widget: {
-            bottom: 2,
-            right: 1,
-            font: fontList[0],
-            opacity: 0.75,
-        },
-    },
-    focusRight: {
-        font: {
-            top: 3,
-            right: 3,
-            weight: 600,
-            size: 8,
-            font: fontList[0],
-            opacity: 0.5,
+            size: 24,
         },
         widget: {
             bottom: 4,
             right: 2,
-            font: fontList[0],
-            opacity: 0.75,
+        },
+    },
+    focusLeft: {
+        font: {
+            top: 4,
+            left: 4,
+            size: 20,
+        },
+        widget: {
+            bottom: 4,
+            left: 4,
+        }
+    },
+    focusRight: {
+        font: {
+            top: 4,
+            right: 4,
+            size: 20,
+        },
+        widget: {
+            bottom: 4,
+            right: 4,
         }
     },
     focusBottom: {
         font: {
-            bottom: 0.001,
+            bottom: 4,
             left: 4,
-            size: 9,
-            weight: 600,
-            font: fontList[0],
-            opacity: 0.5,
+            size: 20,
         },
         widget: {
-            bottom: 5,
-            right: 2,
-            font: fontList[0],
-            opacity: 0.75,
+            bottom: 4,
+            right: 4,
         }
     },
-    direct: {
-        font: {
-            bottom: 5,
-            left: 5,
-            weight: 600,
-            font: fontList[0],
-            opacity: 0.5,
-        },
-        widget: {
-            font: fontList[0],
-            opacity: 0.75,
-        },
-    }
 }
 const timeCustomConfigs = [
     configs.stdView,
     configs.bottomRight,
-    configs.direct,
+    configs.bottomRight,
     configs.bottomRight,
     configs.focusRight,
-    configs.focusBottom,
+    configs.bottomLeft,
     configs.bottomLeft,
     configs.bottomRight,
-    configs.focusBottom,
+    configs.bottomLeft,
     configs.focusRight,
-    configs.direct,
+    configs.focusRight,
     configs.stdView
 ]
 let randIndex = Math.floor(Math.random() * bgNameList.length)
 let visited_bg = [randIndex]
-let bgIndex = randIndex;
-// let bgIndex = bgNameList.length - 1
+// let bgIndex = randIndex;
+let bgIndex = 10
 const updateConfigs = () => {
     db.update(data => {
         data.time_config = timeCustomConfigs[bgIndex].font

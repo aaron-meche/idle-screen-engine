@@ -38,14 +38,14 @@
     {widget_config.left ? "left:" + widget_config.left + "%;" : ""}
     {widget_config.right ? "right:" + widget_config.right + "%;" : ""}
     
-    {widget_config.top || widget_config.bottom ? "" : "top: 1rem;"}
+    {widget_config.top || widget_config.bottom ? "" : "top: 1vh;"}
     {widget_config.left || widget_config.right ? "" : "justify-content: center; width: 100%;"}
 
-    font-size: {widget_config.size || 1}rem;
-    font-family: {widget_config.font};
-    font-weight: {widget_config.weight || 400};
+    font-size: {widget_config.size || 2}vh;
+    font-family: {widget_config.font || "NotoRashi"};
+    font-weight: {widget_config.weight || 500};
     color: {widget_config.color || "white"};
-    opacity: {widget_config.opacity || 1};
+    opacity: {widget_config.opacity || 0.75};
 ">
     <div class="item">
         <i class="fa-solid fa-temperature-half"></i>

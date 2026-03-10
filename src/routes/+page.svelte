@@ -17,6 +17,35 @@
         if (code == "KeyD") {
             iterateBackground()
         }
+        else if (code == "KeyF") {
+            toggleFullscreen()
+        }
+    }
+
+    let vidwrap
+    function toggleFullscreen() {
+        const videoContainer = vidwrap
+        if (!document.fullscreenElement) {
+            if (videoContainer.requestFullscreen) {
+                videoContainer.requestFullscreen();
+            } else if (videoContainer.mozRequestFullScreen) {
+                videoContainer.mozRequestFullScreen();
+            } else if (videoContainer.webkitRequestFullscreen) {
+                videoContainer.webkitRequestFullscreen();
+            } else if (videoContainer.msRequestFullscreen) {
+                videoContainer.msRequestFullscreen();
+            }
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        }
     }
 </script>
 
@@ -24,7 +53,7 @@
 
 <svelte:window on:keydown={handleKeydown} />
 
-<div class="screen">
+<div bind:this={vidwrap} class="screen">
     {#if bg_url}
         <div class="bg" style="background-image: url('{bg_url}')"></div>
     {/if}
@@ -39,7 +68,6 @@
 <style>
     .screen{
         position: relative;
-        margin: 4rem;
         background: black;
         aspect-ratio: 16 / 9;
     }

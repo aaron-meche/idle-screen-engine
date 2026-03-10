@@ -18,6 +18,8 @@
 </div>
 
 <style>
-
+	.page{
+		height: min-content;
+	}
 
 </style>
