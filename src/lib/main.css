@@ -1,0 +1,99 @@
+@font-face {
+    font-family: BaileyScript;
+    src: url('$lib/SansSerif/ExtraLight.otf') format('opentype');
+    font-weight: 200;
+}
+@font-face {
+    font-family: BaileyScript;
+    src: url('$lib/SansSerif/Light.otf') format('opentype');
+    font-weight: 300;
+}
+@font-face {
+    font-family: BaileyScript;
+    src: url('$lib/SansSerif/Regular.otf') format('opentype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: BaileyScript;
+    src: url('$lib/SansSerif/Medium.otf') format('opentype');
+    font-weight: 500;
+}
+@font-face {
+    font-family: BaileyScript;
+    src: url('$lib/SansSerif/Bold.otf') format('opentype');
+    font-weight: 600;
+}
+@font-face {
+    font-family: BaileyScript;
+    src: url('$lib/SansSerif/ExtraBold.otf') format('opentype');
+    font-weight: 700;
+}
+@font-face {
+    font-family: BaileyScript;
+    src: url('$lib/SansSerif/Black.otf') format('opentype');
+    font-weight: 800;
+}
+@font-face {
+    font-family: BaileyScript;
+    src: url('$lib/SansSerif/ExtraBlack.otf') format('opentype');
+    font-weight: 900;
+}
+@font-face {
+    font-family: Baskerville;
+    src: url('$lib/Baskerville/Baskervville-VariableFont_wght.ttf') format('truetype');
+}
+
+:root{
+	--hue: 240;
+	--sat: 0%;
+	--strt: 94%;
+	--diff: -6%; 
+
+	--accent: hsl(var(--hue), 48%, 64%);
+	--accent-transparent: hsl(var(--hue), 48%, 48%, 40%);
+    --true-accent: hsl(255, 89%, 64%);
+	--contrast: hsl(var(--hue), 0%, calc(100% - var(--strt)));
+	--contrast-transparent: hsl(var(--hue), 0%, 92%, 40%);
+	--bg: hsl(var(--hue), var(--sat), calc(var(--strt) + (0 * var(--diff))));
+	--bg-transparent: hsl(var(--hue), var(--sat), calc(var(--strt) + (0 * var(--diff))), 40%);
+	--l05: hsl(var(--hue), var(--sat), calc(var(--strt) + (0.5 * var(--diff))));
+	--l1: hsl(var(--hue), var(--sat), calc(var(--strt) + (1 * var(--diff))));
+	--l2: hsl(var(--hue), var(--sat), calc(var(--strt) + (2 * var(--diff))));
+	--l3: hsl(var(--hue), var(--sat), calc(var(--strt) + (3 * var(--diff))));
+	--l4: hsl(var(--hue), var(--sat), calc(var(--strt) + (4 * var(--diff))));
+	--l5: hsl(var(--hue), var(--sat), calc(var(--strt) + (5 * var(--diff))));
+	--l6: hsl(var(--hue), var(--sat), calc(var(--strt) + (6 * var(--diff))));
+    --green: hsl(120, 40%, 80%);
+    --red: hsl(0, 40%, 80%);
+
+	--inline-moat: 15vw;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root{
+		--strt: 6%;
+		--diff: 6%;
+        --green: hsl(120, 40%, 20%);
+        --red: hsl(0, 40%, 20%);
+	}
+}
+
+@media (orientation: portrait) {
+    :root{
+        --inline-moat: 5vw;
+    }
+}
+
+body{
+    height: 100%;
+    margin: 0;
+    background: var(--bg);
+    font-size: 1rem;
+    font-family: BaileyScript;
+    color: var(--contrast);
+    overflow: hidden;
+}
+
+a,button,input{
+    display: inline-block;
+}
