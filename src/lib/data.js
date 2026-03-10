@@ -161,8 +161,8 @@ const timeCustomConfigs = [
 ]
 let randIndex = Math.floor(Math.random() * bgNameList.length)
 let visited_bg = [randIndex]
-// let bgIndex = randIndex;
-let bgIndex = 10
+let bgIndex = randIndex;
+// let bgIndex = 10
 const updateConfigs = () => {
     db.update(data => {
         data.time_config = timeCustomConfigs[bgIndex].font
