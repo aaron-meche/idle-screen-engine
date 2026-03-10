@@ -42,6 +42,10 @@
     font-family: Baskerville;
     src: url('$lib/Baskerville/Baskervville-VariableFont_wght.ttf') format('truetype');
 }
+@font-face {
+    font-family: NotoRashi;
+    src: url('$lib/Noto_Rashi/NotoRashiHebrew-VariableFont_wght.ttf') format('truetype');
+}
 
 :root{
 	--hue: 240;

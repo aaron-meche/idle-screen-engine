@@ -9,7 +9,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>Aaron Meche - Resume</title>
+	<title>Idle Screen Engine</title>
 	<script src="https://kit.fontawesome.com/5cf062dc93.js" crossorigin="anonymous"></script>
 </svelte:head>
 
@@ -18,12 +18,6 @@
 </div>
 
 <style>
-	.page{
-		height: calc(100vh - 4rem);
-		aspect-ratio: 1 / calc(11 / 8.5);
-		margin: 2rem auto;
-		background: white;
-		box-shadow: 0 0 2rem 0 var(--l2);
-	}
+
 
 </style>
